@@ -1,0 +1,21 @@
+---
+# This playbook installs powershell version 5
+
+- name: Run powershell script
+  hosts: '{{azure_resource_group}}'
+  gather_facts: false
+  tasks:
+    - name: install powershell 5.1
+      win_copy:
+        src: openjdk_install.ps1
+        dest: C:/ansible/openjdk_install.ps1
+      register: out
+
+    - debug: var=out.stdout_lines
+
+    - name: Run remote PowerShell Script
+      win_shell: powershell.exe -ExecutionPolicy ByPass -File C:/ansible/openjdk_install.ps1
+
+    - pause: minutes=3
+
+    - win_reboot:
