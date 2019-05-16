@@ -1,4 +1,4 @@
-# Install WMF 5.1
+# Install WMF 5.1 for Powershell upgrade
 $url = 'https://download.microsoft.com/download/6/F/5/6F5FF66C-6775-42B0-86C4-47D41F2DA187/Win8.1AndW2K12R2-KB3191564-x64.msu'
 $checksum = 'a8d788fa31b02a999cc676fb546fc782e86c2a0acd837976122a1891ceee42c0'
 $output = "C:\Windows\Temp\Win8.1AndW2K12R2-KB3191564-x64.msu"
