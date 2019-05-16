@@ -1,6 +1,6 @@
 ---
 - name: promote server to a Domain Controller
-  hosts: all
+  hosts: '{{azure_resource_group}}'
   connection: winrm
 
   tasks:
