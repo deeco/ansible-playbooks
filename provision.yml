@@ -3,7 +3,6 @@
   hosts: localhost
   connection: local
   vars:
-    azure_storage_account: ansibletowertest001
     azure_vm_size: Standard_B2s
     azure_sku: 2012-R2-Datacenter
     azure_location: westeurope
