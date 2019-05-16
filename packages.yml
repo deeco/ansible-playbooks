@@ -36,9 +36,9 @@
       name: 7zip
       state: present
 
-  - name: install tortisegit
+  - name: install tortoisegit
     win_chocolatey:
-      name: tortisegit
+      name: tortoisegit
       state: present
 
   - name: install ant
