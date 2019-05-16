@@ -1,6 +1,6 @@
 ---
 - name: manage files/directories
-  hosts: all
+  hosts: '{{azure_resource_group}}'
   connection: winrm
   
   tasks:
