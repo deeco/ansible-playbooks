@@ -50,3 +50,13 @@
     win_chocolatey:
       name: gradle
       state: present
+
+  - name: install silverlight4sdk
+    win_chocolatey:
+      name: silverlight4sdk
+      state: present
+  
+  - name: install silverlight5sdk
+    win_chocolatey:
+      name: silverlight5sdk
+      state: present
