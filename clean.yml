@@ -1,6 +1,6 @@
 ---
 - name: cleanup the Azure resource group after test
-  hosts: localhost
+  hosts: '{{azure_resource_group}}'
   connection: winrm
 
   tasks:
