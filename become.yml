@@ -1,6 +1,6 @@
 ---
 - name: setup user for become with Admin rights
-  hosts: all
+  hosts: '{{azure_resource_group}}'
   connection: winrm
   become_method: runas
 
