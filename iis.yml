@@ -1,7 +1,6 @@
 ---
 - name: install iis
   hosts: '{{azure_resource_group}}'
-  connection: winrm
 
   tasks:
   - name: Install IIS Web-Server with sub features and management tools

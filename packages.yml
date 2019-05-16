@@ -26,7 +26,27 @@
       name: git
       state: present
 
-  - name: install sysinternals
+  - name: install filezilla
     win_chocolatey:
-      name: sysinternals
+      name: filezilla
+      state: present
+
+  - name: install 7zip
+    win_chocolatey:
+      name: 7zip
+      state: present
+
+  - name: install tortisegit
+    win_chocolatey:
+      name: tortisegit
+      state: present
+
+  - name: install ant
+    win_chocolatey:
+      name: ant
+      state: present
+
+  - name: install gradle
+    win_chocolatey:
+      name: gradle
       state: present
