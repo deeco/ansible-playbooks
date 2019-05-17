@@ -8,6 +8,8 @@
     win_updates:
       category_name:
       - SecurityUpdates
+      - CriticalUpdates
+      - UpdateRollups
       whitelist:
       - KB3035131
       - KB2919442
