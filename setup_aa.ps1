@@ -6,8 +6,8 @@ $gitBranch="AA-ENV_19.1.0_FP" #AA_ENV branch to use
 $aaenv="https://" + $user +":" + $pass + "@github.com/Accela-Inc/AA-ENV.git"
 
 #REMEMBER TO UPDATE USER/PASS
-$user=""
-$pass=""
+$user=$username
+$pass=$password
 
 #Check/set directory
 If(!(test-path $gitDirectory))
