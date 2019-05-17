@@ -3,7 +3,7 @@
 $gitDirectory="C:\ansible\GIT" #set directory for cloning git repository
 $aaWorspace="C:\AA_Auto_Build_Deploy" #set directory where put AA-ENV
 $gitBranch="AA-ENV_19.1.0_FP" #AA_ENV branch to use
-$aaenv="https://" + $user +":" + $pass + "@github.com/Accela-Inc/AA-ENV.git"
+$aaenv="https://" + $user + $pass + "@github.com/Accela-Inc/AA-ENV.git"
 
 #REMEMBER TO UPDATE USER/PASS
 $user=$username
