@@ -38,3 +38,24 @@ $newSysPath = $oldSysPath + ";C:\OpenJDK\jdk8u202-b08\bin"
 Set-ItemProperty -path 'hklm:\system\currentcontrolset\control\session manager\environment' -Name Path -Value $newSysPath
 
 msiexec /i $file2
+######################
+### Add Firewall Rules
+######################
+# This script install all we need to set up a machine to deploy AA
+
+
+echo "update gitinstall/config"
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+git config --global core.autocrlf true
+git config --system --unset credential.helper
+git config --global core.askpass
+
+
+#Open port on firewall
+New-NetFirewallRule -DisplayName 'iis ACA AGIS' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('80', '443')
+New-NetFirewallRule -DisplayName 'biz' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('3080', '3443')
+New-NetFirewallRule -DisplayName 'cmfx' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('4080', '4443')
+New-NetFirewallRule -DisplayName 'web' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('5080', '5443')
+New-NetFirewallRule -DisplayName 'keystone api' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('7080', '7443')
+New-NetFirewallRule -DisplayName 'index' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('6099', '6990', '6080')
+New-NetFirewallRule -DisplayName 'jenkins' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('42424')

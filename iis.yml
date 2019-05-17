@@ -1,12 +1,48 @@
 ---
-- name: install iis
-  hosts: '{{azure_resource_group}}'
+- name: Install Roles and Features
+  win_feature:
+    name: "{{ item }}"
+    state: present
+    restart: true
+    include_management_tools: true
+  with_items: " {{ win_roles }} "
 
-  tasks:
-  - name: Install IIS Web-Server with sub features and management tools
-    win_feature:
-      name: Web-Server
-      state: present
-      include_sub_features: True
-      include_management_tools: True
-    register: win_feature
+---
+win_roles:
+  - Web-WebServer
+  - Web-Common-Http
+  - Web-Default-Doc
+  - Web-Dir-Browsing
+  - Web-Performance
+  - Web-Http-Errors
+  - Web-Static-Content
+  - Web-Http-Errors
+  - Web-Http-Redirect
+  - Web-Http-Logging
+  - Web-Log-Libraries
+  - Web-ODBC-Logging
+  - Web-Request-Monitor
+  - Web-Request-Filter
+  - Web-Stat-Compression
+  - Web-Dyn-Compression
+  - Web-Filtering
+  - Web-Basic-Auth
+  - Web-Client-Auth
+  - Web-Digest-Auth
+  - Web-Cert-Auth
+  - Web-IP-Security
+  - Web-Url-Auth
+  - Web-Windows-Auth
+  - Web-Basic-Auth
+  - Web-ASPNET45
+  - Web-Net-Ext45
+  - Web-AppInit
+  - Web-Asp-Net45
+  - Web-ISAPI-Ext
+  - Web-ISAPI-Filter
+  - Web-Mgmt-Console
+  - Web-Metabase
+  - Web-Lgcy-Mgmt-Console
+  - Web-Scripting-Tools
+  - NET-WCF-HTTP-Activation45
+  - Telnet-Client
