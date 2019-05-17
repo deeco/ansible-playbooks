@@ -16,5 +16,7 @@
     - name: Run remote PowerShell Script aa get from scm
       #win_shell: powershell.exe -ExecutionPolicy ByPass -File C:/ansible/setup_aa.ps1
       win_shell: powershell.exe -ExecutionPolicy ByPass -File C:/ansible/setup_aa.ps1 -usern '{{git_username}}'  -pass '{{git_password}}' -branch '{{branch_id}}'
+    
+    -debug: var=output.stdout_lines
 
     - pause: minutes=3
