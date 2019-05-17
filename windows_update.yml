@@ -1,0 +1,14 @@
+---
+- name: install windows update KB's
+  hosts: '{{azure_resource_group}}'
+
+  tasks:
+
+  - name: Install only particular updates based on the KB numbers
+    win_updates:
+      category_name:
+      - SecurityUpdates
+      whitelist:
+      - KB3035131
+      - KB2919442
+      - KB2999226
