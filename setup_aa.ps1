@@ -1,13 +1,16 @@
 # This script install all we need to set up a machine to deploy AA
 
+[CmdletBinding()]
+param (
+      [string] $usern
+    , [string] $pass
+    , [string] $branch
+)
+
 $gitDirectory="C:\ansible\GIT" #set directory for cloning git repository
 $aaWorspace="C:\AA_Auto_Build_Deploy" #set directory where put AA-ENV
-$gitBranch="AA-ENV_19.1.0_FP" #AA_ENV branch to use
-$aaenv="https://" + $user + $pass + "@github.com/Accela-Inc/AA-ENV.git"
-
-#REMEMBER TO UPDATE USER/PASS
-$user=$username
-$pass=$password
+$gitBranch=$branch #AA_ENV branch to use
+$aaenv="https://" + $user +":" + $pass + "@github.com/Accela-Inc/AA-ENV.git"
 
 #Check/set directory
 If(!(test-path $gitDirectory))
