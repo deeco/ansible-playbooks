@@ -67,4 +67,4 @@
       state: present
 
   - name: reboot afer installs
-    reboot:
+    win_reboot:
