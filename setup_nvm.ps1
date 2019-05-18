@@ -3,8 +3,6 @@
 # install nvm + npm
 ##########################
 
-echo "installing nvm"
-choco install -y nvm --force
 echo "update environment variables"
 nvm install 8.11.1
 refreshenv

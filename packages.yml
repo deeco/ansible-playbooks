@@ -64,8 +64,7 @@
   - name: install nvm
     win_chocolatey:
       name: nvm
-      state: downgrade
-      version: 8.11.1
+      state: present
 
   - name: reboot afer installs
     reboot:
