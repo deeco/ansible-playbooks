@@ -60,3 +60,12 @@
     win_chocolatey:
       name: silverlight5sdk
       state: present
+
+  - name: install nvm
+    win_chocolatey:
+      name: nvm
+      state: downgrade
+      version: 8.11.1
+
+  - name: reboot afer installs
+    reboot:

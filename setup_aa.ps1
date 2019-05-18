@@ -11,6 +11,7 @@ $gitDirectory="C:\ansible\GIT" #set directory for cloning git repository
 $aaWorspace="C:\AA_Auto_Build_Deploy" #set directory where put AA-ENV
 $gitBranch=$branch #AA_ENV branch to use
 $aaenv="https://" + $usern +":" + $pass + "@github.com/Accela-Inc/AA-ENV.git"
+$folder="AA-ENV"
 
 #Check/set directory
 If(!(test-path $gitDirectory))
@@ -23,32 +24,19 @@ If(!(test-path $aaWorspace))
 }
 
 #Cloning repository
-echo "Cloning repository"
 cd $gitDirectory
-rm -r -fo AA-ENV
-Start-Sleep -Seconds 5
+rm -r -fo $folder
+echo "removing folder .........."
+Start-Sleep -Seconds 10
+echo "Cloning repository"
 git clone $aaenv 
-cd AA-ENV
+cd $folder
 git checkout $gitBranch
 
 #Copy AA-ENV into workspace directory
-echo "Copy AA-ENV"
-Copy-Item -force $gitDirectory/AA-ENV -Destination $aaWorspace/AA-ENV -Recurse
+echo "Moving folder and files"
+rm -r -fo $aaWorspace/$folder
+Start-Sleep -Seconds 15
+Copy-Item -force $gitDirectory/$folder -Destination $aaWorspace/$folder -Recurse
 New-Item -ItemType Directory -Force -Path $aaWorspace/index
 
-##########################
-# install nvm + npm
-##########################
-
-echo "installing nvm"
-choco install -y nvm --force
-echo "update environment variables"
-nvm install 8.11.1
-refreshenv
-echo "update nvm install/config"
-refreshenv
-nvm use 8.11.1
-refreshenv
-npm install -g bower
-npm install -g grunt-cli
-npm install -g karma
