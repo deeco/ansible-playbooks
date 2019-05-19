@@ -14,6 +14,5 @@
       - KB3035131
       - KB2919442
       - KB2999226
-  - name: Validate that the netlogon service has started, before running the next task
+  - name: Reboot after updates
     win_reboot:
-     test_command: 'exit (Get-Service -Name Netlogon).Status -ne "Running"'
