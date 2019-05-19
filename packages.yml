@@ -4,7 +4,6 @@
   connection: winrm
 
   tasks:
-  - win_reboot:
   - name: install_chocolatey
     win_chocolatey:
       name: "chocolatey"

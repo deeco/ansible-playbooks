@@ -14,3 +14,5 @@
       - KB3035131
       - KB2919442
       - KB2999226
+  - name: Reboot the machine with all defaults
+  win_reboot:
