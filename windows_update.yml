@@ -17,6 +17,10 @@
       - DeveloperKits
       - Updates
       whitelist:
+      - KB4499151
       - KB3035131
       - KB2919442
       - KB2999226
+      - KB4499408
+      - KB890830
+      - KB3185319
