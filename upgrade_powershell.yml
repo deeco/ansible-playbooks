@@ -5,7 +5,6 @@
   hosts: '{{azure_resource_group}}'
   gather_facts: false
   tasks:
-    tasks:
     - name: create directory for Ansible 
       win_file:
         path: C:\ansible\
