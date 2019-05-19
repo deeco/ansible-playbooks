@@ -5,6 +5,12 @@
   hosts: '{{azure_resource_group}}'
   gather_facts: false
   tasks:
+    tasks:
+    - name: create directory for Ansible 
+      win_file:
+        path: C:\ansible\
+        state: directory
+
     - name: install powershell 5.1
       win_copy:
         src: powershell_upgrade.ps1
