@@ -11,6 +11,11 @@
       - SecurityUpdates
       - CriticalUpdates
       - UpdateRollups
+      - DefinitionUpdates
+      - FeaturePacks
+      - ServicePacks
+      - DeveloperKits
+      - Updates
       whitelist:
       - KB3035131
       - KB2919442
