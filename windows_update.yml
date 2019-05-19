@@ -14,4 +14,5 @@
       - KB3035131
       - KB2919442
       - KB2999226
-    - win_reboot:
+   - name: reboot after updates 
+     win_reboot:
