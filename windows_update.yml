@@ -10,6 +10,7 @@
       - SecurityUpdates
       - CriticalUpdates
       - UpdateRollups
+      log_path: c:\ansible\wuupdates.txt
       whitelist:
       - KB3035131
       - KB2919442
