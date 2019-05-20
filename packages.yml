@@ -13,7 +13,14 @@
   - name: choco feature enable -n allowGlobalConfirmation
     win_shell: powershell.exe -ExecutionPolicy ByPass choco feature enable -n allowGlobalConfirmation
 
-  - win_reboot:
+  - name: choco install kb2919442
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2919442 -y
+
+  - name: choco install kb2999226
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2999226 -y
+
+  - name: choco install kb3035131
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb3035131 -y
 
   - name: install notepadplusplus
     win_chocolatey:
@@ -39,21 +46,6 @@
   - name: install 7zip
     win_chocolatey:
       name: 7zip
-      state: present
-
-  - name: install kb3035131
-    win_chocolatey:
-      name: kb3035131
-      state: present
-
-  - name: install kb2919442
-    win_chocolatey:
-      name: kb2919442
-      state: present
-
-  - name: install kb2999226
-    win_chocolatey:
-      name: kb2999226
       state: present
 
   - name: install tortoisegit
