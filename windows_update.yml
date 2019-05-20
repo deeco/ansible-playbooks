@@ -18,4 +18,5 @@
       - KB4499408
       - KB890830
       - KB3185319
-    - win_reboot:
+  - name: Reboot the machine with all defaults
+  win_reboot:
