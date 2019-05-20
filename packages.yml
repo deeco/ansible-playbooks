@@ -14,13 +14,13 @@
     win_shell: powershell.exe -ExecutionPolicy ByPass choco feature enable -n allowGlobalConfirmation
 
   - name: choco install kb2919442
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2919442 -y
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2919442 -y --force
 
   - name: choco install kb2999226
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2999226 -y
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2999226 -y --force
 
   - name: choco install kb3035131
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb3035131 -y
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb3035131 -y --force
 
   - name: install notepadplusplus
     win_chocolatey:
