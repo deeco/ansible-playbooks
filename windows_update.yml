@@ -6,6 +6,7 @@
 
   - name: Install only particular updates based on the KB numbers
     win_updates:
+      log_path: c:\ansible\wuupdates.txt
       category_name:
       - SecurityUpdates
       - CriticalUpdates
