@@ -81,5 +81,9 @@
       name: nvm
       state: present
 
+  become: yes
+  become_user: Administrator
+  become_method: runas
+
   - name: reboot afer installs
     win_reboot:
