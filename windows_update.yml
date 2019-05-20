@@ -25,4 +25,4 @@
       - KB890830
       - KB3185319
    - name: Reboot after updates
-    win_reboot:
+      win_reboot:
