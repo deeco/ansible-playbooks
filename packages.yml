@@ -10,6 +10,9 @@
       state: downgrade
       version: 0.10.11
 
+  - name: choco feature enable -n allowGlobalConfirmation
+    win_shell: powershell.exe -ExecutionPolicy ByPass choco feature enable -n allowGlobalConfirmation
+
   - name: install notepadplusplus
     win_chocolatey:
       name: notepadplusplus
