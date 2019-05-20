@@ -13,6 +13,8 @@
   - name: choco feature enable -n allowGlobalConfirmation
     win_shell: powershell.exe -ExecutionPolicy ByPass choco feature enable -n allowGlobalConfirmation
 
+  - win_reboot:
+
   - name: install notepadplusplus
     win_chocolatey:
       name: notepadplusplus
