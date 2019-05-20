@@ -1,10 +1,5 @@
 ---
-- name: install windows update KB's
-  hosts: '{{azure_resource_group}}'
-
-  tasks:
-
-  - name: Install only particular updates based on the KB numbers
+- name: Install only particular updates based on the KB numbers
     win_updates:
       log_path: c:\ansible\wuupdates.txt
       category_name:
@@ -24,5 +19,6 @@
       - KB4499408
       - KB890830
       - KB3185319
-  - name: Reboot after updates
-    win_reboot:
+      
+- name: Reboot after updates
+  win_reboot:
