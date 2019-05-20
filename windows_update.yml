@@ -19,8 +19,3 @@
       - KB4499408
       - KB890830
       - KB3185319
-      
-  - name: Reboot after updates
-    win_reboot:
-      msg: "Reboot initiated by remote admin"
-      pre_reboot_delay: 5
