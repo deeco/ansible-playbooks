@@ -10,27 +10,6 @@
       state: downgrade
       version: 0.10.11
 
-  - name: choco feature enable -n allowGlobalConfirmation
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco feature enable -n allowGlobalConfirmation
-
-  - name: choco install kb2919442
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2919442 -y --force
-    become: yes
-    become_user: Administrator
-    become_method: runas
-
-  - name: choco install kb2999226
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb2999226 -y --force
-    become: yes
-    become_user: Administrator
-    become_method: runas
-
-  - name: choco install kb3035131
-    win_shell: powershell.exe -ExecutionPolicy ByPass choco install kb3035131 -y --force
-    become: yes
-    become_user: Administrator
-    become_method: runas
-
   - name: install notepadplusplus
     win_chocolatey:
       name: notepadplusplus
@@ -55,11 +34,6 @@
   - name: install 7zip
     win_chocolatey:
       name: 7zip
-      state: present
-
-  - name: install tortoisegit
-    win_chocolatey:
-      name: tortoisegit
       state: present
 
   - name: install ant
