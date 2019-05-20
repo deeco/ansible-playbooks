@@ -36,42 +36,25 @@
       name: 7zip
       state: present
 
-  - name: enable choco installs without prompts
-    win_chocolatey_feature:
-      name: allowGlobalConfirmation
-      state: enabled
-
   - name: install kb3035131
     win_chocolatey:
       name: kb3035131
       state: present
-      become: yes
-      become_user: Administrator
-      become_method: runas
 
   - name: install kb2919442
     win_chocolatey:
       name: kb2919442
       state: present
-      become: yes
-      become_user: Administrator
-      become_method: runas
 
   - name: install kb2999226
     win_chocolatey:
       name: kb2999226
       state: present
-      become: yes
-      become_user: Administrator
-      become_method: runas
 
   - name: install tortoisegit
     win_chocolatey:
       name: tortoisegit
       state: present
-      become: yes
-      become_user: Administrator
-      become_method: runas
 
   - name: install ant
     win_chocolatey:
